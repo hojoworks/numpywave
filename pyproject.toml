@@ -1,0 +1,30 @@
+[project]
+name = "numpywave"
+version = "0.1.0"
+description = "Audio waveform analysis with numpy and matplotlib"
+readme = "README.md"
+authors = [
+    { name = "hojo", email = "hojo@hojoworks.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "soundfile>=0.14.0",
+]
+
+[project.scripts]
+numpywave = "numpywave.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
